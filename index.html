@@ -43,20 +43,77 @@
 
 
         <div class="content">
-            <p>Noteikumu teksts</p>
+            <h3 class="virsraksts">Noteikumu teksts</h3>
+                Vārds:  <input id="vards" />
+                <br />
+                Vecums: <input id="vecums" />
+                <br>
+                Reģions:
+                <select id="regions">
+                    <option value="Vidzeme"> Vidzeme</option>
+                    <option value="Latgale"> Latgale</option>
+                    <option value="Kurzeme"> Kurzeme</option>
+                    <option value="Zemgale"> Zemgale</option>
 
-            <div class="game">
-
-                <div class="block">😀</div>
-                <div class="block">😝</div>
-                <div class="block">😍</div>
-                <div class="block">😝</div>
-                <div class="block">😀</div>
-                <div class="block">😍</div>
-            </div>   
-
+                </select>
+                <button onclick="saktSpeli()"> 
+                 Sākt spēli   
+                </button>
         </div>
 
   </div>  <!--beidzas wrapper-->
+<script>
+function saktSpeli()
+{
+    let vards=document.querySelector("#vards").value //mainīgajam vards piešķir vērtību no ID vards
+    let vecums=document.querySelector("#vecums").value
+    let regions=document.querySelector("#regions").value
+    console.log(vards) //paskatās vai vārds korekti ir nolasījies un to izdrukā konsolē
+    console.log(vecums)
+    console.log(regions)
+    console.log(vards+" "+vecums+" "+regions) 
+
+    if(vards=="") //nevis piešķir vērtību ir vienāds, bet pārbauda vai ir vienāds, dažreiz var būt arī ==undefined
+    // if(vards=="" && vards==" ") pārbauda vai nav ievadīts arī 1 tukšums
+    {
+        alert("Ievadi vārdu!")
+    }
+}//beidzas saktSpeli()
+
+
+    /*
+   let vards;
+   const valsts="Latvija" ;
+   vards="Laura";
+   let vards2=`Pēteris ir
+labais!!!`;
+let klase=["Jānis","Laura","Jana"];
+klase[3]='Uģis';
+
+let skolens={
+    vards:'Jānis',
+    vecums:16,
+    'patīk datori':'jā'
+}
+skolens ['vards']
+
+let json=[
+    {
+        vards:'Jānis',
+        vecums:16
+    },
+    {
+        vards:'Jana',
+        vecums:17
+    }
+]
+//json[1]['vecums']
+
+console.log('beigas ir sasniegtas')
+
+document.querySelector('.virsraksts').innerHTML='Vārds:'+vards
+*/
+</script>
+
 </body>
 </html>
