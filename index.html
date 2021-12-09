@@ -68,6 +68,8 @@ function saktSpeli()
     let vards=document.querySelector("#vards").value //mainīgajam vards piešķir vērtību no ID vards
     let vecums=document.querySelector("#vecums").value
     let regions=document.querySelector("#regions").value
+//konsoles logu pārlūkā izsauc ar F12
+
     console.log(vards) //paskatās vai vārds korekti ir nolasījies un to izdrukā konsolē
     console.log(vecums)
     console.log(regions)
@@ -78,6 +80,15 @@ function saktSpeli()
     {
         alert("Ievadi vārdu!")
     }
+    else 
+    { 
+       window.location="spele.html#"+vards+","+vecums+","+regions
+       //# nozīmē, ka sekos nevis faila nosaukums,bet parametri vai cita info
+        //# vietā var lietot arī ?
+    
+    }
+
+
 }//beidzas saktSpeli()
 
 
