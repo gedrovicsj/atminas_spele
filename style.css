@@ -47,7 +47,7 @@ li
     vertical-align: top;
 }
 
-.block div
+.block div /*attieksies tikaim uz klases block iekšējo elementu (tagu) div*/
 {
     display:none;
 }
