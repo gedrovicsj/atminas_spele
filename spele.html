@@ -72,11 +72,20 @@
   </div>  <!--beidzas wrapper-->
 <script>
 
+let laukumuSaturs=['😀','😝','😍','😝','😀','😍']
+let atvertieLaukumi=[]
+let pedejieDivi=[]
  function veiktGajienu(laukums)   
  {
     console.log(laukums) 
     document.querySelector('#'+laukums+' div').style.display="block"
 //style nozīmē, ka ņem no style.css faila 
+atvertieLaukumi.push(laukums) //masīvā iespiež, ievada vērtību
+if(laukumuSaturs.length== atvertieLaukumi.length)
+{
+    
+}
+}
 }
 
 </script>
