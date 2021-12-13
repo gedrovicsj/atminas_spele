@@ -1,3 +1,8 @@
+<!-- Javascript reference Googlē palīdzībai-->
+<!-- Js interactive exercises Googlē 150 uzdevumi ar atrisinājumiem-->
+<!-- https://devdocs.io-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +13,7 @@
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
+    
   <div class="wrapper">
         <div class="header">
                <h1> 
@@ -77,15 +83,68 @@ let atvertieLaukumi=[]
 let pedejieDivi=[]
  function veiktGajienu(laukums)   
  {
-    console.log(laukums) 
+    let atvertsJaunsLaukums=false;
+    if(atvertieLaukumi.indexOf(laukums)==-1)
+    //indexOf rāda vietu masīvā, ja elements tur nav, tad rāda -1
+    {
+        atvertsJaunsLaukums=true;   
+    }
+    else
+    {
+        atvertsJaunsLaukums=false;
+    }
+    //console.log(laukums) 
+    //console.log(atvertsJaunsLaukums) 
+
+    if(atvertsJaunsLaukums)
+    {
     document.querySelector('#'+laukums+' div').style.display="block"
 //style nozīmē, ka ņem no style.css faila 
-atvertieLaukumi.push(laukums) //masīvā iespiež, ievada vērtību
+document.querySelector('#'+laukums+' div').style.opacity=1 //tas uz kuru uzklišķina, mainās redzamība uz 1
+    pedejieDivi.push(laukums)
+    }
+
+     if(pedejieDivi.length==2)
+
+     {
+        
+        let atverts1=pedejieDivi[0].replace('L','') //. papildus novāc L burtu
+        let atverts2=pedejieDivi[1].replace('L','')
+            console.log(laukumuSaturs[atverts1])
+
+            atverts1=parseInt(atverts1,10) //konvertē no teksta uz skaili, 10-binārajš sistēmā
+            atverts2=parseInt(atverts2,10)
+
+            console.log(laukumuSaturs[atverts1])
+
+        if(laukumuSaturs[atverts1]==laukumuSaturs[atverts2])
+        {
+            console.log("atvērti vienādi")
+           // atvertieLaukumi.push(laukums) //masīvā iespiež, ievada vērtību
+           atvertieLaukumi.push(pedejieDivi[0],pedejieDivi[1])
+        }
+
+        else
+        {
+            console.log("nav atvērti vienādi")
+
+            // document.querySelector('#'+pedejieDivi[0]+' div').style.display="none" //meklē ID un div dziļumā un paslēpj
+            // document.querySelector('#'+pedejieDivi[1]+' div').style.display="none"
+            document.querySelector('#'+pedejieDivi[0]+' div').style.opacity=0.1 //caurspīdīgums
+            document.querySelector('#'+pedejieDivi[1]+' div').style.opacity=0.1
+        }
+        console.log(pedejieDivi)
+        console.log (atverts1)
+        pedejieDivi=[] //ja ir nospiesti
+     }
+
+
+
 if(laukumuSaturs.length== atvertieLaukumi.length)
 {
-    
+alert("Apsveicam!")
 }
-}
+
 }
 
 </script>
